@@ -1,0 +1,267 @@
+<!DOCTYPE html> <!-- Déclaration du type de document -->
+<html lang="fr"> <!-- Balise HTML avec attribut de langue -->
+<head> 
+    <meta charset="UTF-8"> <!-- Définition du jeu de caractères -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Définition de la vue pour les appareils mobiles -->
+    <meta name="robots" content="noindex, nofollow">
+    <title>Votre Application</title> <!-- Titre de la page -->
+    <%= stylesheet_link_tag 'css/application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'js/application', 'data-turbolinks-track': 'reload' %>
+</head> 
+
+<body> <!-- Début du corps du document -->
+    <!-- Navigation -->
+    <nav>
+        <ul class="menu-items"> <!-- Liste de navigation -->
+            <li><a href="#content1" class="active" onclick="showContent('content1')">À propos</a></li> <!-- Lien actif -->
+            <li><a href="#competence" onclick="showContent('competence')">Compétences</a></li> <!-- Lien -->
+            <li><a href="#timeline-on" onclick="showContent('timeline-on')">Parcours</a></li> <!-- Lien -->
+            <li><a href="#image-slider-container" onclick="showContent('image-slider-container')">Projets</a></li> <!-- Lien -->
+            <li><a href="#formcontact" onclick="showContent('formcontact')">Contact</a></li> <!-- Lien -->
+        </ul>
+        <div class="menu-icon"> <!-- Icône du menu -->
+            <%= image_tag 'icones/burger.png', alt: 'Menu' %> <!-- Image de l'icône -->
+        </div>
+    </nav>
+
+    <div class="contenu contient"   id="formcontact"> 
+        
+        <div class="intro">
+            <p>
+            Développeuse web junior. <br>
+            Depuis 2023, j’apprends différents langages de programmation et frameworks : <br>
+            Pour le frontend : HTML5, CSS, JS, React.js.<br>
+            Pour le backend Ruby.<br>
+            Vous trouverez ici, mes derniers projets et plus de détails sur mon profil.<br>
+
+            </p> <!-- Texte -->
+
+            <!-- Icônes sociales -->
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/karenkouassi/"><%= image_tag 'icones/linkedin.png', alt: 'LinkedIn' %></a> <!-- Icône de LinkedIn -->
+                <a href="mailto:karendev184@gmail.com"><%= image_tag 'icones/gmail.png', alt: 'Gmail' %></a> <!-- Icône de Gmail -->
+                <a href="https://github.com/karenpariii"><%= image_tag 'icones/github.png', alt: 'Github' %></a> <!-- Icône de Github -->
+                <a href="https://karenk.hashnode.dev/"><%= image_tag 'icones/hashnode.png', alt: 'Gmail' %></a> <!-- Icône de Hashnode -->
+
+            </div>
+            <!-- Bouton de téléchargement du CV -->
+            <div class="download-cv">
+                <button>Télécharger CV</button> <!-- Bouton de téléchargement -->
+            </div>
+        </div>
+        <!-- Formulaire de contact -->
+        <div>
+         <div class="contact-form" >
+            <h2>Formulaire de Contact</h2> <!-- Titre du formulaire -->
+            <%= form_with(url: '/contact_submit', method: :post, id: 'contact-form', remote: true) do |form| %>
+                  <%= form.text_field :nom, placeholder: "Nom" %>
+                  <%= form.email_field :email, placeholder: "Email" %>
+                  <%= form.text_area :message, placeholder: "Votre message" %>
+                  <%= form.submit 'Envoyer' %>
+            <% end %>
+
+            <% if flash[:notice] %>
+            
+                 <div id="notice" style="color: red; text-align: center;">
+                    <%= flash[:notice] %>
+                 </div>
+            
+             <% end %>
+              
+              
+              
+              
+         </div>
+
+        </div>
+        
+    </div>
+
+    <!-- Section de contenu 1 -->
+    <div id="content1" class="content1 contient">
+        <!-- Image à gauche -->
+        <div class="image-container"  >
+            <%= image_tag 'autres/photoportfolio.png', alt: 'Description de l\'image' %> <!-- Image -->
+        </div>
+        <!-- Texte à droite -->
+        <div class="text-container">
+            <!-- Paragraphe -->
+            Depuis 2023, j’apprends des langages de programmation informatique et frameworks, comme HTML5, CSS, JavaScript, React.js, Ruby on Rails.  <br>       
+            Mon parcours dans l’assurance qualité m’a permis de collaborer étroitement avec des équipes techniques et de comprendre les exigences fonctionnelles et les spécifications métier, une expertise que je souhaite désormais appliquer à la conception et au développement de sites web et d’applications mobiles.<br> <br> 
+            Passionnée par le partage de connaissances, j’écris également des articles pour les débutants en programmation sur Hashnode, afin de rendre cet apprentissage accessible à tous.<br> <br>  
+            Basée à Paris, je suis à la recherche d’opportunités en tant que développeuse web junior. Je pourrai ainsi mettre à profit mes compétences, ma rigueur, et ma capacité à évoluer rapidement dans des projets IT.
+
+        </div>
+    </div>
+
+    <hr/>
+
+    <h1 id="Compétences">Compétences</h1>
+    <!-- Section Compétences -->
+    <div id="competence" class="contient">
+        <div class="skills-container" id="skills">
+            <!-- Les compétences seront générées par JavaScript -->
+        </div>
+    </div>
+ 
+    <hr />
+    <h1 id="Parcours">Parcours</h1>
+    <!-- Section Timeline -->
+    <div id="timeline-on" class="contient">
+        <section class="cd-horizontal-timeline">
+            <div class="timeline">
+                <div class="events-wrapper">
+                    <div class="events">
+                        <ol>
+                            <li><a href="#0" data-date="16/01/2014" class="selected">2011-2015</a></li>
+                            <li><a href="#0" data-date="20/04/2014">2020</a></li>
+                            <li><a href="#0" data-date="20/06/2014">2023</a></li>
+                          <!--  <li><a href="#0" data-date="09/07/2014">2019</a></li> 
+                            <li><a href="#0" data-date="30/08/2014">2021</a></li>
+                            <li><a href="#0" data-date="30/09/2014">2022</a></li> -->
+                        </ol>
+                        <span class="filling-line" aria-hidden="true"></span>
+                    </div> <!-- .events -->
+                </div> <!-- .events-wrapper -->
+
+                <ul class="cd-timeline-navigation">
+                    <li><a href="#0" class="prev inactive">Prev</a></li>
+                    <li><a href="#0" class="next">Next</a></li>
+                </ul> <!-- .cd-timeline-navigation -->
+            </div> <!-- .timeline -->
+
+            <div class="events-content">
+                <ol>
+                    <li class="selected" data-date="16/01/2014">
+                        <h5>Master 2 - Ecole de commerce </h5>
+                        <p style="margin-bottom: 14px;"> Management et marketing</p>
+                    </li>
+                    <li data-date="20/04/2014">
+                        <h5>Formation Lion - Product owner</h5>
+                        <p style="margin-bottom: 14px;"> Apprentissage du  management de produit et du design de produit </p>
+                    </li>
+                    <li data-date="20/06/2014">
+                        <h5>Bootcamp de développement web - Le Wagon</h5>
+                        <p style="margin-bottom: 14px;"> Apprentissage de langages de programmation web et de frameworks</p>
+                    </li>
+                   <!-- <li data-date="09/07/2014">
+                        <h2>Event title here</h2>
+                        <p style="margin-bottom: 14px;">xxxxxxxx ppppppp mmmmmmmmmm</p>
+                    </li>
+                    <li data-date="30/08/2014">
+                        <h2>Event title here</h2>
+                        <p style="margin-bottom: 14px;">yyyyyyyyy tttttt mmmmm</p>
+                    </li>
+                    <li data-date="15/09/2014">
+                        <h2>Event title here</h2>
+                        <p style="margin-bottom: 14px;">meeeeeeeemppppp</p>
+                    </li>
+                    <li data-date="01/11/2014">
+                        <h2>Event title here</h2>
+                        <p style="margin-bottom: 14px;">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.
+                        </p>
+                    </li>
+                    <li data-date="10/12/2014">
+                        <h2>Event title here</h2>
+                        <p style="margin-bottom: 14px;">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.
+                        </p>
+                    </li>
+                    <li data-date="19/01/2015">
+                        <h2>Event title here</h2>
+                        <p style="margin-bottom: 14px;">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.
+                        </p>
+                    </li>
+                    <li data-date="03/03/2015">
+                        <h2>Event title here</h2>
+                        <p style="margin-bottom: 14px;">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.
+                        </p>
+                    </li>
+                    <li data-date="30/09/2014">
+                        <h2>Event title here</h2>
+                        <p style="margin-bottom: 14px;">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.
+                        </p>
+                    </li> -->
+                </ol>
+            </div> 
+        </section>
+    </div>
+
+    <hr/>      
+   <h1 id="Projets">Projets</h1>
+    <!-- Section Projets -->
+    <div id="image-slider-container" class="contient">
+        <!-- Slideshow container -->
+        <div class="slideshow-container">
+
+            <!-- Full-width images with number and caption text -->
+            <div class="mySlides fade" style: "width:2000px;height:2000px" >
+                <div class="numbertext">1 / 4</div>
+                <a href="https://github.com/karenpariii/mini-app">
+                    <%= image_tag 'projets_images/image1.jpg', style: 'width:50%'  %>
+                </a>
+                <div class="text">Une application simple de gestion de tâches. <br>
+                                  Langages utilisés : HTML, CSS et Javascript
+                </div>
+            </div>
+  
+            <div class="mySlides fade" style: "width:2000px;height:2000px">
+                <div class="numbertext">2 / 4</div>
+                <a href="https://github.com/karenpariii/quizz">
+                    <%= image_tag 'projets_images/image2.jpg', style: 'width:50%' %>
+                </a>
+                <div class="text">Une interface simple pour créer et voir des citations. <br>
+                                  Langages utilisés : HTML, CSS et Javascript
+                </div>
+            </div>
+  
+            <div class="mySlides fade" style: "width:2000px;height:2000px">
+                <div class="numbertext">3 / 4</div>
+                <a href="https://github.com/karenpariii/memorygame">
+                    <%= image_tag 'projets_images/image3.jpg', style: 'width:50%' %>
+                </a>
+                <div class="text"> Un jeu de cartes pour faire travailler sa mémoire. <br>
+                                   Langages utilisés : HTML, CSS et Javascript
+                </div>
+            </div>
+
+            <div class="mySlides fade" style: "width:2000px;height:2000px">
+                <div class="numbertext">4 / 4</div>
+                <a href="https://github.com/karenpariii/relay">
+                    <%= image_tag 'projets_images/image4.jpg', style: 'width:50%' %>
+                </a>
+                <div class="text">Une progressive web app pour trouver des places de parking à Paris. <br>
+                                    Langages utilisés : Ruby on rails, HTML, CSS
+                </div>
+            </div>
+
+
+
+
+
+  
+            <!-- Next and previous buttons -->
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        <br>
+  
+        <!-- The dots/circles -->
+        <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+        </div>
+    </div>
+    
+    <%= javascript_include_tag 'js/jquery-min' %>
+    <%= javascript_include_tag 'js/index' %>
+    <%= javascript_include_tag 'js/timeline' %>
+    <%= javascript_include_tag 'js/slider' %>
+</body> <!-- Fin du corps du document -->
+</html> <!-- Fin du document HTML -->

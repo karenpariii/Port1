@@ -1,0 +1,14 @@
+
+#app/views/pages/contact_submit.js.erb
+document.addEventListener('DOMContentLoaded', function() {
+  var messageDiv = document.createElement('div');
+  messageDiv.textContent = 'Message envoyé.';
+  messageDiv.style.color = 'red';
+  messageDiv.style.textAlign = 'center';
+  messageDiv.style.marginTop = '10px';
+  document.getElementById('contact-form').appendChild(messageDiv);
+});
+
+
+
+alert('Votre message a été envoyé avec succès.');

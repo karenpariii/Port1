@@ -1,0 +1,297 @@
+*{
+margin:0;
+padding:0;
+box-sizing: border-box;
+}
+
+body {
+
+    font-family: 'Arial', sans-serif; /* Police de caractères par défaut */
+    margin: 5; /* Supprimer les marges extérieures */
+    padding: 5; /* Supprimer les marges intérieures */
+}
+
+nav {
+    background-color: #fff; /* Couleur de fond */
+    color: #333; /* Couleur du texte */
+    padding: 10px; /* Espace intérieur */
+    display: flex; /* Affichage en flexbox */
+    justify-content: flex-end; /* Aligner le menu à droite */
+    position: fixed; /* Position fixe */
+    top: 0; /* Aligner en haut */
+    width: calc(100% - 20px); /* Calculer la largeur */
+    margin-right: 20px; /* Marge droite */
+    z-index: 999; /* Z-index */
+}
+
+nav ul {
+    list-style-type: none; /* Supprimer les puces de liste */
+    margin: 0; /* Supprimer les marges */
+    padding: 0; /* Supprimer les marges intérieures */
+    text-align: right; /* Aligner le texte à droite */
+    display: flex; /* Affichage en flexbox */
+    align-items: center; /* Aligner les éléments verticalement */
+    margin-left: -20px; /* Ajustement de la marge gauche */
+}
+
+nav ul li {
+    margin-left: 20px; /* Marge gauche */
+}
+
+.menu-icon {
+    display: none; /* Masquer l'icône du menu par défaut */
+    margin-right: 20px; /* Marge droite */
+    margin-bottom: 0; /* Marge basse */
+}
+
+a {
+   text-decoration: none; /* Supprimer les soulignements par défaut */
+}
+
+/* Styles pour les écrans jusqu'à 768px */
+@media screen and ((min-width: 375px) and (max-width: 775px)) {
+    nav ul {
+        display: none; /* Masquer la liste de navigation par défaut */
+        width: 100%; /* Largeur de 100% */
+        background-color: #fff; /* Couleur de fond */
+        position: absolute; /* Position absolue */
+        top: 50px; /* Aligner en haut */
+        right: 0; /* Aligner à droite */
+        z-index: 1; /* Z-index */
+        padding: 0; /* Supprimer les marges intérieures */
+    }
+    .menu-icon {
+        display: inline-block; /* Afficher l'icône du menu */
+        cursor: pointer; /* Curseur pointer */
+    }
+    .menu-icon img {
+        width: 30px; /* Largeur de l'icône */
+    }
+    .menu-items {
+        display: none; /* Masquer la liste de navigation */
+        width: 100%; /* Largeur de 100% */
+        background-color: #fff; /* Couleur de fond */
+        position: absolute; /* Position absolue */
+        top: 50px; /* Aligner en haut */
+        right: 0; /* Aligner à droite */
+        z-index: 1; /* Z-index */
+        padding: 10px; /* Espace intérieur */
+    }
+    .menu-items ul {
+        list-style-type: none; /* Supprimer les puces de liste */
+        padding: 0; /* Supprimer les marges intérieures */
+        margin: 0; /* Supprimer les marges */
+        text-align: center; /* Aligner le texte au centre */
+    }
+    .menu-items ul li {
+        margin-top: 10px; /* Marge supérieure */
+    }
+    .menu-items ul li a {
+        color: #333; /* Couleur du texte */
+        text-decoration: none; /* Supprimer les soulignements */
+        background-color: #fff; /* Couleur de fond */
+        padding: 10px; /* Espace intérieur */
+        display: block; /* Affichage en bloc */
+        border-radius: 5px; /* Bordure arrondie */
+    }
+    .menu-items ul li a:hover {
+        background-color: #ddd; /* Couleur de fond au survol */
+    }
+    .menu-items.show {
+        display: block; /* Afficher la liste de navigation */
+    }
+    .social-icons img {
+        display : none;
+        margin : 0 auto;
+      /*  width: 30px; 
+        margin-right: 10px; 
+        transform: translate(10%,50%);
+        justify-content: center; */
+       
+    }
+    .intro p {
+        font-family: 'Lobster', cursive; /* Police de caractères */
+        font-size: 20%; /* Taille de police */
+    }
+    
+}
+
+.contenu{
+    padding: 20px; /* Espace intérieur */
+    display: grid; /* Affichage en grille */
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Colonnes de largeur flexible */
+    gap: 20px; /* Espacement entre les éléments */
+    background-color: #3498db; /* Couleur de fond */
+    color: #fff; /* Couleur du texte */
+    margin-top: 70px; /* Marge supérieure */
+}
+
+
+
+.social-icons {
+    margin-top: 10px; /* Marge supérieure */
+    margin-bottom: 10px;
+}
+
+.social-icons img {
+    width: 30px; /* Largeur des icônes sociales */
+    margin-right: 10px; /* Marge droite */
+    transform: translate(250px,50%);
+    justify-content: center;
+   
+}
+
+.download-cv button,
+.contact-form button {
+    border-radius: 20px; /* Bordure arrondie */
+    padding: 5px; /* Espace intérieur */
+    background-color: rgba(52, 152, 219, 0.5); /* Couleur de fond */
+    border: 2px solid #fff; /* Bordure */
+    color: #fff; /* Couleur du texte */
+    cursor: pointer; /* Curseur pointer */
+ 
+}
+.download-cv button {
+transform: translate(275px,50%);
+display: none;
+}
+
+.contact-form {
+    background-color: #fff; /* Couleur de fond */
+    padding: 20px; /* Espace intérieur */
+    border-radius: 10px; /* Bordure arrondie */
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%; /* Largeur de 100% */
+    padding: 10px; /* Espace intérieur */
+    margin-bottom: 10px; /* Marge basse */
+    box-sizing: border-box; /* Modèle de boîte */
+}
+
+.contact-form h2 {
+    font-size: 24px; /* Taille de police */
+    margin-bottom: 20px; /* Marge basse */
+    color: black; /* Couleur du texte */
+}
+
+/* Styles pour la nouvelle division content1 */
+.content1 {
+    display: flex; /* Affichage en flexbox */
+    justify-content: center;
+    flex-wrap: wrap; /* Envelopper les éléments sur plusieurs lignes */
+    margin-top: 20px; /* Marge supérieure */
+
+}
+
+.image-container {
+   /* flex: 1 1 auto; Flex-grow, flex-shrink, flex-basis */
+    max-width: 50%; /* Largeur maximale */
+
+}
+
+.text-container {
+    /* flex: 1 1 auto; Flex-grow, flex-shrink, flex-basis */
+    max-width: 50%; /* Largeur maximale */
+    display: flex; /* Affichage en flexbox */
+    align-items: center; /* Aligner les éléments verticalement */
+    padding: 3%;
+    margin-top: -3%;
+    text-align: justify;
+}
+
+/* .text-container p {
+    margin-left: 100%; 
+    
+    margin-right:100%;
+    
+} */
+
+.nav-link-active {
+    text-decoration: underline; /* Soulignement */
+    text-decoration-color: red; /* Couleur du soulignement */
+    text-decoration-thickness: 7px; /* Épaisseur du soulignement */
+}
+
+.menu-items li a.active {
+    text-decoration: underline; /* Soulignement */
+    text-decoration-color: blue; /* Couleur du soulignement */
+    text-decoration-thickness: 7px; /* Épaisseur du soulignement */
+}
+
+.blur {
+    filter: blur(5px); /* Ajouter un flou */
+}
+
+.content.opacity-low {
+    opacity: 0.5; /* Opacité réduite */
+}
+
+/* Styles pour les écrans jusqu'à 768px */
+@media screen and (max-width: 768px) {
+    .content1 {
+        flex-direction: column; /* Changer la direction de la flexbox en colonne */
+    }
+    .image-container, .text-container {
+        max-width: 100%; /* Largeur maximale de 100% */
+    }
+    .text-container p {
+        margin-left: 0; /* Supprimer la marge gauche */
+        margin-top: 10px; /* Ajouter une marge supérieure */
+    }
+}
+
+
+/*  Ajout */
+.skills-container {
+display: flex;
+flex-wrap: wrap;
+justify-content: space-around;
+max-width: 1200px;
+margin: 20px auto;
+}
+.skill {
+width: calc(33.33% - 10px);
+margin-bottom: 20px;
+background-color: #fff;
+border-radius: 8px;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+padding: 20px;
+box-sizing: border-box;
+text-align: center;
+}
+.skill-name {
+font-weight: bold;
+margin-bottom: 15px;
+}
+.progress-circle {
+width: 100px;
+height: 100px;
+border-radius: 50%;
+position: relative;
+margin: 0 auto;
+background: #eee;
+}
+.progress-circle span {
+width: 100%;
+height: 100%;
+border-radius: 50%;
+position: absolute;
+top: 0;
+left: 0;
+display: flex;
+justify-content: center;
+align-items: center;
+font-size: 16px;
+font-weight: bold;
+}
+
+
+/* AJOUT  */
+
+.inactive {
+    opacity: 0.5; /* opacité réduite pour les divs inactives */
+}
+
