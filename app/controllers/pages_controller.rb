@@ -24,16 +24,16 @@ class PagesController < ApplicationController
     @message = params[:message]
     @user_email = params[:email]
 
+    # Envoyer l'email avec les paramètres correctement définis
     ContactMailer.with(name: @name, message: @message, user_email: @user_email).send_contact_email.deliver_now
+
+    flash[:notice] = 'Message envoyé.'
+    redirect_to '/pages/home'
+
   rescue StandardError => e
     logger.error "Erreur lors de l'envoi de l'email : #{e.message}"
-    # Afficher un message d'erreur à l'utilisateur
     flash[:alert] = "Désolé, une erreur est survenue lors de l'envoi de votre message. Veuillez réessayer plus tard."
-        # Utilisez flash pour définir le message de notification
-        flash[:notice] = 'Message envoyé.'
-        # Redirigez vers la page d'accueil
-        redirect_to '/pages/home'
-
+    redirect_to '/pages/home'
   end
 
   private

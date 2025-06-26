@@ -81,7 +81,7 @@ Rails.application.configure do
 
   config.action_mailer.delivery_method = :smtp
 config.action_mailer.smtp_settings = {
-  address: 'smtp.live.com', # Serveur SMTP de Hotmail
+  address: 'smtp.office365.com', # Serveur SMTP de Hotmail
   port: 587, # Le port utilisé par Hotmail pour TLS
   domain: 'hotmail.fr', # Domaine de votre email
   user_name: 'kklamalice@hotmail.fr', # Votre adresse email Hotmail

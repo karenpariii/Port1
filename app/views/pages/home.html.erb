@@ -17,14 +17,14 @@
             <li><a href="#competence" onclick="showContent('competence')">Compétences</a></li> <!-- Lien -->
             <li><a href="#timeline-on" onclick="showContent('timeline-on')">Parcours</a></li> <!-- Lien -->
             <li><a href="#image-slider-container" onclick="showContent('image-slider-container')">Projets</a></li> <!-- Lien -->
-            <li><a href="#formcontact" onclick="showContent('formcontact')">Contact</a></li> <!-- Lien -->
+            <li><a href="#sendEmail" onclick="showContent('formcontact')">Contact</a></li> <!-- Lien -->
         </ul>
         <div class="menu-icon"> <!-- Icône du menu -->
             <%= image_tag 'icones/burger.png', alt: 'Menu' %> <!-- Image de l'icône -->
         </div>
     </nav>
 
-    <div class="contenu contient"   id="formcontact"> 
+    <div class="contenu contient"   > 
         
         <div class="intro">
             <p>
@@ -49,31 +49,7 @@
                 <button>Télécharger CV</button> <!-- Bouton de téléchargement -->
             </div>
         </div>
-        <!-- Formulaire de contact -->
-        <div>
-         <div class="contact-form" >
-            <h2>Formulaire de Contact</h2> <!-- Titre du formulaire -->
-            <%= form_with(url: '/contact_submit', method: :post, id: 'contact-form', remote: true) do |form| %>
-                  <%= form.text_field :nom, placeholder: "Nom" %>
-                  <%= form.email_field :email, placeholder: "Email" %>
-                  <%= form.text_area :message, placeholder: "Votre message" %>
-                  <%= form.submit 'Envoyer' %>
-            <% end %>
 
-            <% if flash[:notice] %>
-            
-                 <div id="notice" style="color: red; text-align: center;">
-                    <%= flash[:notice] %>
-                 </div>
-            
-             <% end %>
-              
-              
-              
-              
-         </div>
-
-        </div>
         
     </div>
 
@@ -89,7 +65,7 @@
             Depuis 2023, j’apprends des langages de programmation informatique et frameworks, comme HTML5, CSS, JavaScript, React.js, Ruby on Rails.  <br>       
             Mon parcours dans l’assurance qualité m’a permis de collaborer étroitement avec des équipes techniques et de comprendre les exigences fonctionnelles et les spécifications métier, une expertise que je souhaite désormais appliquer à la conception et au développement de sites web et d’applications mobiles.<br> <br> 
             Passionnée par le partage de connaissances, j’écris également des articles pour les débutants en programmation sur Hashnode, afin de rendre cet apprentissage accessible à tous.<br> <br>  
-            Basée à Paris, je suis à la recherche d’opportunités en tant que développeuse web junior. Je pourrai ainsi mettre à profit mes compétences, ma rigueur, et ma capacité à évoluer rapidement dans des projets IT.
+            Basée à Paris, je suis à la recherche d’opportunités en tant que développeuse web junior. Je pourrai ainsi mettre à profit mes compétences et ma capacité à évoluer rapidement dans des projets IT.
 
         </div>
     </div>
@@ -258,7 +234,11 @@
             <span class="dot" onclick="currentSlide(4)"></span>
         </div>
     </div>
-    
+
+    <div id="sendEmail">
+     <a href="https://mail.google.com/mail/?view=cm&fs=1&to=karendev184@gmail.com&su=Objet%20du%20mail&body=Ceci%20est%20le%20message">Cliquez ici pour envoyer un message via Gmail</a>
+    </div>
+
     <%= javascript_include_tag 'js/jquery-min' %>
     <%= javascript_include_tag 'js/index' %>
     <%= javascript_include_tag 'js/timeline' %>

@@ -10,6 +10,24 @@ body {
     margin: 5; /* Supprimer les marges extérieures */
     padding: 5; /* Supprimer les marges intérieures */
 }
+#image-slider-container{
+    margin-bottom: 100px;
+}
+
+#sendEmail{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding-top: 10px;
+    margin-top: 200px;
+    width: 20%;
+    height: 50px;
+    border-radius: 10px;
+    background-color: rgb(52, 152, 219);
+    margin: 0 auto;
+    margin-bottom: 100px;
+}
+
 
 nav {
     background-color: #fff; /* Couleur de fond */
